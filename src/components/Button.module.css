@@ -1,0 +1,64 @@
+.true:hover, .false:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.true, .false {
+    border: 2px solid #fff;
+    padding: .8em 2.5em;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 1em;
+    transition: .3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.true svg {
+    color: rgb(63, 240, 116);
+    font-size: 2em;
+    position: absolute;
+    top: 20%;
+    transition: .3s;
+    animation: check .3s 1 linear;
+}
+
+@keyframes check {
+    from {
+        transform: rotate(360deg) scale(0.5)
+    }
+
+    to {
+        transform: rotate(0deg) scale(1)
+    }
+}
+
+.true {
+    color: #000;
+    background: #fff;
+}
+
+.false {
+    color: #fff;
+    background: none;
+}
+
+
+@media (max-width: 750px) {
+    .true, .false {
+        padding: .8em 2em;
+        font-size: 1em;
+        margin-right: 1em;
+    }
+}
+
+@media (max-width: 700px) {
+    .true, .false {
+        padding: .8em 0;
+        width: 200px;
+        max-width: 45%;
+        margin-bottom: .5em;
+        margin: 0;
+    }
+}

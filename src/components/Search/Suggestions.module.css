@@ -1,0 +1,44 @@
+.options_container {
+    width: 400px;
+    max-width: 90%;
+    min-height: 100px;
+    max-height: 400px;
+    position: absolute;
+    z-index: 2;
+    top: 88%;
+    overflow-y: scroll;
+    background-color: #fff;
+}
+
+.options_container ul {
+    list-style: none;
+    padding: 0;
+    background-color: #fff;
+    overflow-x: hidden
+}
+
+.options_container ul li {
+    border: 1px solid black;
+    padding: 1em 0 1em .5em;
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    transition: .3s;
+}
+
+.options_container ul a {
+    text-decoration: none;
+}
+
+.options_container ul li:hover {
+    background-color: #aca6a6;
+    transform: scale(1.02);
+}
+
+.options_container ul li img {
+    height: 100px;
+    object-fit: cover;
+    margin-right: 1em;
+}
+

@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+.navbar_container {
+    background-color: #E01600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3em;
+    color: #fff;
+    position: relative;
+}
+
+.navbar_container h1 {
+    font-family: 'Oleo Script'
+}
+
+.navbar_container .true, 
+.navbar_container .false {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.navbar_container .logo {
+    display: flex;
+    flex-direction: row;
+    transition: .3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo a {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar_container a {
+    text-decoration: none;
+    color: #fff;
+    transition: .3s
+}
+
+.li_item:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #fff;
+    transition: .5s;
+}
+
+.li_item:hover:after {
+    width: 100%;
+}
+
+.active:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    transition: .5s;
+}
+
+.close {
+    display: none;
+}
+
+.menu {
+    font-size: 2em;
+    position: absolute;
+    right: 5%;
+    display: none;
+}
+
+@media (max-width: 800px) {
+
+    .menu {
+        font-size: 2em;
+        position: absolute;
+        right: 5%;
+        display: flex;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .menu:hover {
+        transform: scale(1.1);
+    }
+
+    .close {
+        display: initial;
+        font-size: 2em;
+        float: right;
+        right: 0;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .close:hover {
+        color: #430bc7;
+    }
+
+    .navbar_container {
+        justify-content: center;
+        position: relative;
+    }
+
+    .navbar_container .true, 
+    .navbar_container .false {
+        width: 40%;
+        height: 300px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: #bb0303;
+        padding: 0 .5em;
+        position: absolute;
+        transition: .5s;
+        animation: appear 1s 1 linear;
+        border-radius: 10px;
+        top: -20%;
+    }
+
+    .true {
+        right: 0;
+    }
+
+    .false {
+        right: -45%;
+    }
+
+    @keyframes appear {
+        from {
+            right: -45%;
+        }
+        to {
+            right: 0;
+        }
+    }
+
+    .navbar_container ul li {
+        padding: 1em 0;
+    }
+
+    .li_item, .active {
+        width: 120px;
+    }
+
+    .li_item:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 0%;
+        background-color: #fff;
+        transition: .5s;
+    }
+    
+    .li_item:hover:after {
+        width: 100%;
+    }
+    
+    .active:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+        transition: .5s;
+    }
+
+}
+
+
+

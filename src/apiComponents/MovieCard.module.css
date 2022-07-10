@@ -1,0 +1,38 @@
+.mycard_container {
+    width: 130px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-box-shadow: -1px 2px 15px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: -1px 2px 15px 5px rgba(0, 0, 0, 0.4);
+    transition: .3s;
+    background-color: black;
+}
+
+.global {
+    transition: .3s;
+    margin: 1em 0;
+}
+
+.global:hover {
+    transform: scale(1.1);
+}
+
+.mycard_container img {
+    max-width: 101%;
+    object-fit: cover;
+}
+
+.global {
+    text-align: center;
+    max-width: 130px;
+}
+
+.global a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}

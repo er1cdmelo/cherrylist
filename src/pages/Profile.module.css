@@ -1,0 +1,9 @@
+.global_container {
+    background: linear-gradient(180deg, #5828B1 9.32%, #342958 50.36%, #202030 96.63%);
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2em;
+}
