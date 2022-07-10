@@ -10,7 +10,7 @@ const Navbar = () => {
   location = location.pathname.split('/')[1]
   console.log(location)
 
-  const [showTab, setShowTab] = useState('true')
+  const [showTab, setShowTab] = useState('false')
 
 
   return (

@@ -129,7 +129,6 @@
         padding: 0 .5em;
         position: absolute;
         transition: .5s;
-        animation: appear 1s 1 linear;
         border-radius: 10px;
         top: -20%;
     }
@@ -140,15 +139,6 @@
 
     .false {
         right: -45%;
-    }
-
-    @keyframes appear {
-        from {
-            right: -45%;
-        }
-        to {
-            right: 0;
-        }
     }
 
     .navbar_container ul li {

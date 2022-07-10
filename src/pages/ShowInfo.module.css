@@ -5,19 +5,21 @@
     justify-content: center;
     align-items: center;
     padding-top: 1em;
+    background: linear-gradient(180deg, #5828B1 9.32%, #342958 50.36%, #202030 96.63%);
 }
 
 .banner {
     object-fit: cover;
     position: absolute;
     min-height: 100%;
-    z-index: -1;
+    z-index: 1;
     left: 0;
     top: 0;
     filter: brightness(30%);
 }
 
 .card_container {
+    z-index: 1;
     width: 900px;
     max-width: 90%;
     min-height: 500px;
@@ -38,6 +40,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    z-index: 2;
 }
 
 .poster {
@@ -138,6 +141,11 @@
     align-items: center;
     justify-content: space-between;
     width: 85%;
+    z-index: 2;
+}
+
+.cast {
+    z-index: 2;
 }
 
 .genres ul {
