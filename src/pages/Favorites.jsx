@@ -24,7 +24,7 @@ const Favorites = () => {
           list.map(li => (
             <MovieCard search={li} />
           ))
-        ) : <div className={styles.none}>Sem favoritos salvos...</div>}
+        ) : <div className={styles.none}>Lista de favoritos vazia...</div>}
       </div>
     </div>
   )

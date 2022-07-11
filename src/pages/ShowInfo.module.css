@@ -12,10 +12,12 @@
     object-fit: cover;
     position: absolute;
     min-height: 100%;
+    max-width: 100%;
     z-index: 1;
     left: 0;
     top: 0;
     filter: brightness(30%);
+    background-color: black;
 }
 
 .card_container {
@@ -322,10 +324,6 @@
     .rating {
         display: flex;
         justify-content: center;
-    }
-
-    .banner {
-        left: -50%;
     }
 
     .second_info {

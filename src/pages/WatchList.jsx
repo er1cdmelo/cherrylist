@@ -24,7 +24,7 @@ const WatchList = () => {
           list.map(li => (
             <MovieCard search={li} />
           ))
-        ) : <Loading />}
+        ) : 'Watchlist vazia...'}
       </div>
     </div>
   )
