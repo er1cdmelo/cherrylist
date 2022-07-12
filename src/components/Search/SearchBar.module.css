@@ -7,6 +7,7 @@
     justify-content: center;
     position: relative;
     margin-bottom: 2em;
+    text-align: center;
 }
 
 .search_container input {
@@ -30,6 +31,6 @@
 
     .search_container input {
         font-size: 1.1em;
-        padding: .5em 2em;
+        padding: .5em 1em;
     }
 }
