@@ -16,6 +16,7 @@
     padding: .5em 2em;
     border: none;
     border-radius: 5px;
+    max-width: 90%;
 }
 
 .search_container input:focus,
@@ -30,7 +31,7 @@
     }
 
     .search_container input {
-        font-size: 1.1em;
+        font-size: 1em;
         padding: .5em 1em;
     }
 }

@@ -4,6 +4,8 @@ import Loading from '../components/Loading'
 import MovieCard from '../apiComponents/MovieCard'
 
 const WatchList = () => {
+
+  document.title = `CherryList - Watchlist`
   
   const [list, setList] = useState([])
   useEffect(() => {

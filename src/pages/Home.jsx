@@ -18,6 +18,7 @@ const Home = () => {
         <MovieCard search='The Umbrella Academy' />
         <MovieCard search='Ms Marvel' />
         <MovieCard search='Obi-wan Kenobi' />
+        <MovieCard search='SPY FAMILY' />
       </ShowsContainer>
       <ShowsContainer title='Recomendados para você'>
         <MovieCard search='Moon Knight' />
@@ -25,6 +26,7 @@ const Home = () => {
         <MovieCard search='Superman Lois' />
         <MovieCard search='Severance' />
         <MovieCard search='Bel-air' />
+        <MovieCard search='Better Call Saul' />
       </ShowsContainer>
     </div>
   )

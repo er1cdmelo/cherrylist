@@ -34,7 +34,7 @@
 @media (max-width: 400px) {
     .fav_container div {
         text-align: center;
-        max-width: 90px;
+        max-width: 80px;
         text-decoration: none;
     }
 }
