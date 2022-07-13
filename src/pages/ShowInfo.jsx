@@ -270,13 +270,13 @@ const ShowInfo = () => {
                         <h2>{ep.name === 'TBA' ? 'Unknown' : ep.name}</h2>
                         <p>
                           {ep.summary ? ep.summary
-                            .replace("<p>", "")
-                            .replace("<i>", "")
-                            .replace("</i>", "")
-                            .replace("</p>", "")
-                            .replace("</b>", "")
-                            .replace("<b>", "")
-                            .replace("&amp;", "&") : 'No summary avaible'
+                            .replaceAll("<p>", "")
+                            .replaceAll("<i>", "")
+                            .replaceAll("</i>", "")
+                            .replaceAll("</p>", "")
+                            .replaceAll("</b>", "")
+                            .replaceAll("<b>", "")
+                            .replaceAll("&amp;", "&") : 'No summary avaible'
                             }
                         </p>
                       </div>
