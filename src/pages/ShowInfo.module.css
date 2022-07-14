@@ -203,6 +203,13 @@
     width: 100%;
     min-height: 400px;
     z-index: 2;
+
+}
+
+.episodes h2 span {
+    color: #7a7a7a;
+    font-size: .8em;
+    margin-left: 1em;
 }
 
 .episodes ul {
@@ -213,7 +220,7 @@
 .episodes ul li {
     padding: 1em 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .episodes ul li img {
@@ -232,6 +239,7 @@
     min-width: 300px;
     justify-content: flex-start;
     position: relative;
+    top: 0;
 }
 
 .episodes .text h2 {
@@ -435,6 +443,10 @@
         justify-content: space-between;
     }
 
+    .episodes>h2 {
+        text-align: center;
+    }
+
     .episodes ul li img {
         width: 150px;
         height: 130px;
@@ -528,10 +540,6 @@
         height: 100px;
     }
 
-    .episodes>h2 {
-        text-align: center;
-    }
-
     .episodes ul li img {
         width: 100px;
         height: 80px;
@@ -543,11 +551,13 @@
         height: 80px;
         overflow-y: scroll;
         border-bottom: 1px solid #7a7a7a;
+        border: 1px solid #fff;
     }
 
     .episodes .text h2 {
-        font-size: .9em;
+        font-size: .8em;
         margin: 0;
+        max-width: 90%;
     }
 
     .episodes .text span {

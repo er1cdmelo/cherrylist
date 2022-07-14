@@ -173,7 +173,7 @@ const ShowInfo = () => {
             <div className={styles.text_area}>
               <div className={styles.title_date}>
                 <h1>{show.name}</h1>
-                <span>{show.premiered.substr(0, 4)}</span>
+                <span>{show.premiered.substr(0, 4)}{show.ended && -show.ended.substr(0, 4)}</span>
               </div>
               <div className={styles.stream_status}>
                 <span
@@ -250,7 +250,7 @@ const ShowInfo = () => {
             </ul>
           </div>
           <div className={styles.episodes}>
-            <h2>Episodes</h2>
+            <h2>Episodes {episodes.length && <span>{episodes.length}</span>}</h2>
             <ul>
               {episodes.length
                 ? episodes.map((ep) => (
