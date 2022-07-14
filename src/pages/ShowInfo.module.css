@@ -473,6 +473,10 @@
         text-align: center;
     }
 
+    .genres ul {
+        justify-content: center;
+    }
+
     .buttons {
         display: flex;
         justify-content: space-between;
