@@ -201,15 +201,19 @@
 
 .episodes {
     width: 100%;
-    min-height: 400px;
     z-index: 2;
 
+}
+
+.episodes>h2 {
+    display: flex;
+    align-items: center;
 }
 
 .episodes h2 span {
     color: #7a7a7a;
     font-size: .8em;
-    margin-left: 1em;
+    margin: 0 1em;
 }
 
 .episodes ul {
@@ -264,21 +268,52 @@
 
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #e10915;
-  }
+}
 
-  ::-webkit-scrollbar-thumb:hover {
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #e10915;
+}
+
+::-webkit-scrollbar-thumb:hover {
     background: #97191f;
-  }
+}
+
+.images {
+    z-index: 1;
+}
+
+.images h2  {
+    display: flex;
+    align-items: center;
+}
+
+.images h2 span {
+    color: #7a7a7a;
+    font-size: .8em;
+    margin: 0 1em;
+}
+
+.images ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.images ul li img {
+    max-width: 100%;
+}
+
+.blank {
+    display: none;
+}
 
 @media (max-width: 940px) {
 
@@ -443,8 +478,8 @@
         justify-content: space-between;
     }
 
-    .episodes>h2 {
-        text-align: center;
+    .episodes>h2, .images>h2 {
+        justify-content: center;
     }
 
     .episodes ul li img {
@@ -472,6 +507,22 @@
         margin: 0;
         width: 100%;
         font-size: .8em;
+    }
+
+    .images ul {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .images ul li:not(.blank) {
+        border: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .images ul li img {
+        object-fit: cover;
     }
 }
 

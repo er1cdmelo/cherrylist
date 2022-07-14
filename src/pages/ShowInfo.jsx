@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
+import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import React, { useEffect, useState, useContext } from "react";
 import styles from "./ShowInfo.module.css";
 import Loading from "../components/Loading";
@@ -13,11 +14,13 @@ import audio from "../components/providers/pop.mp3";
 const ShowInfo = () => {
   const { id } = useParams();
   const [show, setShow] = useState("");
-  const [showImages, setShowImages] = useState("");
+  const [images, setImages] = useState("");
   const [banner, setBanner] = useState("");
   const [rating, setRating] = useState(0);
   const [cast, setCast] = useState("");
   const [episodes, setEpisodes] = useState([]);
+  const [showEpisodes, setShowEpisodes] = useState(false);
+  const [showImages, setShowImages] = useState(true);
   const { watched, setWatched } = React.useContext(WatchListData);
   const { favorited, setFavorited } = React.useContext(FavoritesData);
   const arrStars = [];
@@ -45,18 +48,18 @@ const ShowInfo = () => {
       .then((res) => res.json())
       .then((data) => {
         setRating((show.rating.average * 5) / 10);
-        setShowImages(data);
+        setImages(data);
         document.title = `CherryList - ${show.name}`;
       })
       .catch((err) => console.log(err));
   }, [show]);
 
   useEffect(() => {
-    if (showImages.length) {
-      for (var i = 0; i < showImages.length; i++) {
-        if (showImages[i].type === "background") {
-          if (showImages[i].resolutions.original.url) {
-            setBanner(showImages[i].resolutions.original.url);
+    if (images.length) {
+      for (var i = 0; i < images.length; i++) {
+        if (images[i].type === "background") {
+          if (images[i].resolutions.original.url) {
+            setBanner(images[i].resolutions.original.url);
             return;
           }
         }
@@ -65,7 +68,7 @@ const ShowInfo = () => {
         "https://media.istockphoto.com/photos/black-canvas-with-delicate-grid-to-use-as-background-or-texture-picture-id1143755923?k=20&m=1143755923&s=612x612&w=0&h=xM-CYFltFp1rq1lxVv0T7zsPlbU1IfVniXDcAXZbaKw="
       );
     }
-  }, [showImages]);
+  }, [images]);
 
   useEffect(() => {
     fetch(`https://api.tvmaze.com/shows/${id}/cast`)
@@ -250,9 +253,9 @@ const ShowInfo = () => {
             </ul>
           </div>
           <div className={styles.episodes}>
-            <h2>Episodes {episodes.length && <span>{episodes.length}</span>}</h2>
+            <h2>Episodes {episodes.length && <span>{episodes.length}</span>} {showEpisodes ? <AiFillCaretUp onClick={() => setShowEpisodes(false)} /> : <AiFillCaretDown onClick={() => setShowEpisodes(true)} />}</h2>
             <ul>
-              {episodes.length
+              {episodes.length && showEpisodes
                 ? episodes.map((ep) => (
                     <li>
                       <img
@@ -282,10 +285,23 @@ const ShowInfo = () => {
                       </div>
                     </li>
                   ))
-                : "nao tem nada"}
+                : ""}
             </ul>
           </div>
-          {showImages && (
+          <div className={styles.images}>
+            <h2>Images <span>{images.length && images.length}</span> {showImages ? <AiFillCaretUp onClick={() => {
+              console.log(images)
+              setShowImages(false)
+            }} /> : <AiFillCaretDown onClick={() => setShowImages(true)} />}</h2>
+            <ul>
+              {images && showImages ? (
+                images.map(img => (
+                  <li className={img.resolutions.medium ? '' : styles.blank}>{img.resolutions.medium ? <img src={img.resolutions.medium.url} alt="cover" /> : ''}</li>
+                ))
+              ) : ''}
+            </ul>
+          </div>
+          {images && (
             <div className={styles.banner}>
               <img src={banner} alt="background" />
             </div>
