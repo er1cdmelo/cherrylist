@@ -296,11 +296,14 @@ const ShowInfo = () => {
             <ul>
               {images && showImages ? (
                 images.map(img => (
-                  <li className={img.resolutions.medium ? '' : styles.blank}>{img.resolutions.medium ? <img src={img.resolutions.medium.url} alt="cover" /> : ''}</li>
+                  <li className={img.resolutions.medium || img.resolutions.original ? '' : styles.blank}>{img.resolutions.medium ? <img src={img.resolutions.medium.url} alt="cover" /> : <img src={img.resolutions.original.url} alt="cover" />}</li>
                 ))
               ) : ''}
             </ul>
-          </div>
+          </div>{ show.network &&
+          <div className={styles.network}>
+            {show.network.name && <span>Produced by <h2>{show.network.name}</h2></span>}
+          </div>}
           {images && (
             <div className={styles.banner}>
               <img src={banner} alt="background" />
