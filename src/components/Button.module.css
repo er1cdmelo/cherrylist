@@ -9,7 +9,7 @@
     border-radius: 5px;
     font-size: 1em;
     font-family: 'Poppins', sans-serif;
-    margin-right: 1em;
+    margin-right: 1.5em;
     transition: .3s;
     cursor: pointer;
     position: relative;
@@ -44,6 +44,34 @@
     background: none;
 }
 
+.fav_true,
+.fav_false {
+    font-size: 2em;
+    display: flex;
+    width: max-content;
+    margin: 0;
+    cursor: pointer;
+    transition: .3s;
+    
+}
+
+.fav_true {
+    animation: favEffect .2s 1 linear;
+}
+
+@keyframes favEffect {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.fav_true svg {
+    fill: red;
+}
+
 
 @media (max-width: 750px) {
     .true, .false {
@@ -55,10 +83,16 @@
 
 @media (max-width: 700px) {
     .true, .false {
-        padding: .8em 0;
-        width: 200px;
-        max-width: 45%;
-        margin-bottom: .5em;
-        margin: 0;
+        padding: .8em 1.3em;
+        width: 250px;
+        max-width: 65%;
+    }
+}
+
+@media (max-width: 560px) {
+    .true, .false {
+        padding: .8em 1.3em;
+        width: 350px;
+        max-width: 80%;
     }
 }

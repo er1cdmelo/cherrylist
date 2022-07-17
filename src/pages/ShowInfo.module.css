@@ -337,6 +337,11 @@
     font-size: 1.1em;
 }
 
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
 @media (max-width: 940px) {
 
     .card_container {
@@ -391,12 +396,22 @@
 
 @media (max-width: 700px) {
 
+
     .second_info {
         align-items: flex-start;
     }
 
     .genres {
         width: 80%;
+        padding: 0;
+    }
+
+    .genres h2 {
+        margin: 0;
+    }
+
+    .buttons {   
+        width: 40%;
     }
 }
 
@@ -495,13 +510,19 @@
         text-align: center;
     }
 
+    .genres h2 {
+        margin: 1em 0;
+    }
+
     .genres ul {
         justify-content: center;
     }
 
     .buttons {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        width: 50%;
+        min-width: 100px;
     }
 
     .episodes>h2, .images>h2 {
@@ -592,7 +613,7 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        width: 100%;
+        width: 90%;
         padding: 0;
         margin: 0;
     }
@@ -628,7 +649,6 @@
         height: 80px;
         overflow-y: scroll;
         border-bottom: 1px solid #7a7a7a;
-        border: 1px solid #fff;
     }
 
     .episodes .text h2 {

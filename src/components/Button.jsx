@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BsCheck } from "react-icons/bs";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import {
   WatchListData,
   FavoritesData,
@@ -13,7 +14,6 @@ const Button = ({ clickEvent, text }) => {
   const { favorited } = React.useContext(FavoritesData);
 
   useEffect(() => {
-    console.log("senti clicado watchlist");
     if (watched && text === "Watchlist") {
       setActive_w(true);
     }
@@ -23,7 +23,6 @@ const Button = ({ clickEvent, text }) => {
   }, [watched]);
 
   useEffect(() => {
-    console.log("senti clicado favorites");
     if (favorited && text === "Favorite") {
       setActive_f(true);
     }
@@ -40,12 +39,9 @@ const Button = ({ clickEvent, text }) => {
       {text} {active_w ? <BsCheck /> : null}
     </button>
   ) : (
-    <button
-      onClick={clickEvent}
-      className={active_f ? styles.true : styles.false}
-    >
-      {text} {active_f ? <BsCheck /> : null}
-    </button>
+    <span onClick={clickEvent} className={active_f ? styles.fav_true : styles.fav_false}>
+      {active_f ? <AiFillHeart /> : <AiOutlineHeart />}
+    </span>
   );
 };
 

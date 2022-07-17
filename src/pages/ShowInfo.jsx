@@ -93,7 +93,6 @@ const ShowInfo = () => {
       .then((data) => {
         if (data) {
           setEpisodes(data);
-          console.log(episodes);
         }
       });
   }, [id]);
@@ -107,7 +106,6 @@ const ShowInfo = () => {
   }, [watchlist]);
 
   useEffect(() => {
-    console.log("favorites mudou");
     if (favorites !== null) {
       if (favorites.includes(id)) {
         setFavorited(true);
@@ -133,12 +131,10 @@ const ShowInfo = () => {
     watchlist = JSON.parse(localStorage.getItem("watchlist"));
     if (watchlist.includes(id)) {
       watchlist.splice(watchlist.indexOf(id));
-      console.log("retirado da watchlist");
       // SET WATCHED
       setWatched(false);
     } else {
       watchlist.push(id);
-      console.log("adicionado à favorites");
       // SET WATCHED
       setWatched(true);
     }
@@ -153,12 +149,10 @@ const ShowInfo = () => {
     favorites = JSON.parse(localStorage.getItem("favorites"));
     if (favorites.includes(id)) {
       favorites.splice(favorites.indexOf(id));
-      console.log("retirado da favorites");
       // SET FAVORITE
       setFavorited(false);
     } else {
       favorites.push(id);
-      console.log("adicionado à favorites");
       // SET FAVORITE
       setFavorited(true);
     }
@@ -290,7 +284,6 @@ const ShowInfo = () => {
           </div>
           <div className={styles.images}>
             <h2>Images <span>{images.length && images.length}</span> {showImages ? <AiFillCaretUp onClick={() => {
-              console.log(images)
               setShowImages(false)
             }} /> : <AiFillCaretDown onClick={() => setShowImages(true)} />}</h2>
             <ul>

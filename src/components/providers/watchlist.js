@@ -8,10 +8,6 @@ export const WatchContext = (props) => {
     const [watched, setWatched] = useState(false)
     const [favorited, setFavorited] = useState(false)
 
-    useEffect(() => {
-        console.log('watched mudou')
-    }, [watched])
-
     return (
         <WatchListData.Provider value={{watched, setWatched}}>
             <FavoritesData.Provider value={{favorited, setFavorited}}>
